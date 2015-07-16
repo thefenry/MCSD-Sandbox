@@ -14,6 +14,28 @@
     <script src="/js/default.js"></script>
 </head>
 <body>
-    <p>Content goes here</p>
+    <!-- Section defines content in a page that is not stand alone -->
+    <section style="margin-left: 120px; margin-top:45px">
+        <hgroup>
+            <h1>Markup</h1>
+            <h2>Demo</h2>
+        </hgroup>
+        <p>Favorite</p>
+        <form onsubmit="claps.play(); return false;">
+            <input id="favUrl" type="url" required placeholder="http://ivansued.com" />
+            <input type="submit" value="Save..." />
+        </form>
+        <audio src="audio/De Hofnar - Zonnestraal.mp3" controls>Your browser or app does not work</audio>
+
+        <video src="video/icecream_timelapse.mp4" controls style="width:200px; height:300px;"></video>
+
+        <svg width="200" height="200">
+            <rect fill="rgb(0,0255)"
+                  x="10"
+                  y="10"
+                  width="180"
+                  height="180"></rect>
+        </svg>
+    </section>
 </body>
 </html>
