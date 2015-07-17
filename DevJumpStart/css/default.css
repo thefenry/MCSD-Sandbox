@@ -1,2 +1,78 @@
-﻿body {
+﻿.layoutBox{
+    width:30px;
+    height:30px;
+    color:green;
+    background-color:yellowgreen;
+}
+
+/*This css will set the div in an absolute position from the top then 
+    the rest of the position would be based on that top position.
+*/
+#id01{
+    position:absolute;
+    top: 25px;
+    left: 50px;
+    z-index:0;
+}
+
+/*This one instead will set the position relative to where it should be 
+    and then set the top and left position based on location. 
+*/
+#id02{
+    position:relative;
+    top:25px;
+    left:50px;
+    z-index:1; /*The z indez will be how it overlaps other elements.*/
+}
+
+.tablecell{
+    display: table-cell;
+    text-align:center;
+    vertical-align:middle; /*This property will only work on a table cell not a div*/
+}
+
+
+/*FLEXBOX 1*/
+.flexbox #flexbox1{
+    margin-top: 20px;
+    display: -ms-flexbox;
+    width:100%;
+    -ms-flex-pack: distribute;
+    border: 1px solid gray;
+}
+
+.flexbox #flexbox1 > div {min-width: 80px; min-height:80px;}
+.flexbox #flexbox1 > div:nth-child(1){background-color:red;}
+.flexbox #flexbox1 > div:nth-child(2){background-color:green;}
+.flexbox #flexbox1 > div:nth-child(3){background-color:blue;}
+
+/*FLEXBOX 2*/
+.flexbox #flexingFlexbox{
+    margin-top: 20px;
+    display: -ms-flexbox;
+}
+
+.flexbox #flexingFlexbox > div {min-width: 80px; min-height:80px;}
+.flexbox #flexingFlexbox > div:nth-child(1){background-color:red; -ms-flex:1 0 auto;}
+.flexbox #flexingFlexbox > div:nth-child(2){background-color:green; -ms-flex:2 0 auto;}
+.flexbox #flexingFlexbox > div:nth-child(3){background-color:blue;}
+
+
+/*GRID SIMPLE*/
+.grid #simple > div{display:-ms-grid; -ms-grid-columns: 250px 250px; -ms-grid-rows: 250px 250px;}/*MS-grid can be used to vertically align in a div*/
+.grid #simple > div > div{border:1px solid gray;}
+.grid #simple > div > div:nth-child(2){-ms-grid-column: 2; -ms-grid-row: 1;}
+.grid #simple > div > div:nth-child(3){ -ms-grid-row: 2;}
+.grid #simple > div > div:nth-child(4){-ms-grid-column: 2; -ms-grid-row: 2;}
+
+
+/*TRANSFORMS*/
+#pic {
+    width:160px;
+    transition: all 2s;/*This adds an animation to designated elements and time*/
+}
+
+#pic:hover{
+/*This will scale up/down based on positive numbers and will move based on number and rotate based on the degree amount*/
+    transform: scale(2) translate(50px, 50px) rotate(10deg);
 }
