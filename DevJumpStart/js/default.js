@@ -6,6 +6,17 @@
     var app = WinJS.Application;
     var activation = Windows.ApplicationModel.Activation;
 
+    function queryDom() {
+        //this will get the element that matches the query by id.
+        var elementById = document.getElementById("pic");
+        //Add new class to the element
+        elementById.classList.add("test");
+        //this will return the first element that matches the selector
+        var thing = document.querySelector(".nodelist");
+        //This will return the list of live elements that match the selector
+        var list = document.querySelectorAll(".nodelist");
+    }
+
     app.onactivated = function (args) {
         if (args.detail.kind === activation.ActivationKind.launch) {
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
@@ -18,6 +29,8 @@
             args.setPromise(WinJS.UI.processAll());
         }
     };
+
+    app.onready = queryDom;//eventhandler to run function when page is ready.
 
     app.oncheckpoint = function (args) {
         // TODO: This application is about to be suspended. Save any state
